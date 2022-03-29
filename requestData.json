@@ -1,0 +1,57 @@
+{
+  "additionalUserIds": [],
+  "category": "live-546656-live",
+  "checkOnly": false,
+  "countA": 1,
+  "countB": 4,
+  "latencies": [
+    {
+      "latency": 239,
+      "regionName": "ap-south-1"
+    },
+    {
+      "latency": 129,
+      "regionName": "eu-west-1"
+    },
+    {
+      "latency": 249,
+      "regionName": "ap-southeast-1"
+    },
+    {
+      "latency": 269,
+      "regionName": "ap-southeast-2"
+    },
+    {
+      "latency": 115,
+      "regionName": "eu-central-1"
+    },
+    {
+      "latency": 221,
+      "regionName": "ap-northeast-2"
+    },
+    {
+      "latency": 197,
+      "regionName": "ap-northeast-1"
+    },
+    {
+      "latency": 50,
+      "regionName": "us-east-1"
+    },
+    {
+      "latency": 167,
+      "regionName": "sa-east-1"
+    },
+    {
+      "latency": 85,
+      "regionName": "us-west-2"
+    }
+  ],
+  "platform": "EGS",
+  "props": {
+    "CrossplayOptOut": "false",
+    "characterName": "Nea"
+  },
+  "rank": 17,
+  "region": "all",
+  "side": "B"
+}
