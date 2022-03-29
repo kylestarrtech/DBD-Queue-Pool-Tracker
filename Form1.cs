@@ -337,11 +337,15 @@ namespace DBDMatchmakingTracker {
             if (checkBox.Checked) {
                 regionType.Enabled = false;
                 regions.SetRegionPreference(false);
+                blockPanel.Enabled = true;
+                blockPanel.Visible = true;
                 //TODO: Update Interval Display
 
                 return;
             }
 
+            blockPanel.Enabled = false;
+            blockPanel.Visible = false;
             regionType.Enabled = true;
             regions.SetRegionPreference(true);
 

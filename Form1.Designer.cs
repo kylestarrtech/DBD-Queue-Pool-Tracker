@@ -57,6 +57,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.SRVCHRT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ETACHRT = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.blockPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.KLRCHRT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SRVCHRT)).BeginInit();
@@ -124,7 +125,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Killer Pool";
             this.KLRCHRT.Series.Add(series1);
-            this.KLRCHRT.Size = new System.Drawing.Size(730, 161);
+            this.KLRCHRT.Size = new System.Drawing.Size(729, 161);
             this.KLRCHRT.TabIndex = 2;
             this.KLRCHRT.Text = "chart1";
             // 
@@ -145,9 +146,9 @@
             "us-east-1",
             "sa-east-1",
             "us-west-2"});
-            this.regionType.Location = new System.Drawing.Point(46, 171);
+            this.regionType.Location = new System.Drawing.Point(53, 171);
             this.regionType.Name = "regionType";
-            this.regionType.Size = new System.Drawing.Size(405, 22);
+            this.regionType.Size = new System.Drawing.Size(398, 22);
             this.regionType.TabIndex = 5;
             this.regionType.SelectedIndexChanged += new System.EventHandler(this.regionType_SelectedIndexChanged);
             // 
@@ -157,7 +158,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1, 174);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 17);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Region:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -415,7 +416,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Survivor Pool";
             this.SRVCHRT.Series.Add(series2);
-            this.SRVCHRT.Size = new System.Drawing.Size(730, 161);
+            this.SRVCHRT.Size = new System.Drawing.Size(729, 161);
             this.SRVCHRT.TabIndex = 26;
             this.SRVCHRT.Text = "chart1";
             // 
@@ -463,9 +464,19 @@
             series3.Legend = "Legend1";
             series3.Name = "Estimated Wait Times";
             this.ETACHRT.Series.Add(series3);
-            this.ETACHRT.Size = new System.Drawing.Size(730, 162);
+            this.ETACHRT.Size = new System.Drawing.Size(729, 162);
             this.ETACHRT.TabIndex = 27;
             this.ETACHRT.Text = "chart2";
+            // 
+            // blockPanel
+            // 
+            this.blockPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.blockPanel.Enabled = false;
+            this.blockPanel.Location = new System.Drawing.Point(56, 174);
+            this.blockPanel.Name = "blockPanel";
+            this.blockPanel.Size = new System.Drawing.Size(395, 15);
+            this.blockPanel.TabIndex = 28;
+            this.blockPanel.Visible = false;
             // 
             // Form1
             // 
@@ -473,6 +484,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1182, 517);
+            this.Controls.Add(this.blockPanel);
             this.Controls.Add(this.ETACHRT);
             this.Controls.Add(this.SRVCHRT);
             this.Controls.Add(this.label9);
@@ -530,6 +542,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataVisualization.Charting.Chart SRVCHRT;
         private System.Windows.Forms.DataVisualization.Charting.Chart ETACHRT;
+        private System.Windows.Forms.Panel blockPanel;
     }
 }
 
