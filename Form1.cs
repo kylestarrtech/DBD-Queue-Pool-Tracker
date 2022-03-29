@@ -248,7 +248,7 @@ namespace DBDMatchmakingTracker {
 
         public void SetupRegions() {
             List<Region> regionList = new List<Region>();
-            IntRange unselectedRegionRange = new IntRange(100, 251);
+            IntRange unselectedRegionRange = new IntRange(150, 251);
             Random rand = new Random();
 
             foreach(string region in regionType.Items.OfType<string>()) {
