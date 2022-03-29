@@ -205,6 +205,8 @@ namespace DBDMatchmakingTracker {
             dt.Columns.Add("SRVs", typeof(int));
             dt.Columns.Add("ETAs", typeof(double));
 
+            regionType.Region = new System.Drawing.Region(new Rectangle(3, 3, regionType.Width - 3, regionType.Height - 7));
+
             SetupRegions();
             SetupFiles();
         }
@@ -318,21 +320,6 @@ namespace DBDMatchmakingTracker {
             rawTable.DataSource = dt;
         }
 
-        private void intervalBar_ValueChanged(object sender, EventArgs e) {
-            TrackBar trackBar = (TrackBar)sender;
-            intervalDisplay.Value = trackBar.Value;
-
-            QueueDataTimer.Interval = trackBar.Value * 1000;
-        }
-
-        private void intervalDisplay_ValueChanged(object sender, EventArgs e) {
-            NumericUpDown numUpDown = (NumericUpDown)sender;
-
-            intervalBar.Value = (int)Math.Round(numUpDown.Value);
-
-            QueueDataTimer.Interval = intervalBar.Value * 1000;
-        }
-
         private void regionType_SelectedIndexChanged(object sender, EventArgs e) {
             IntRange unselectedRegionRange = new IntRange(150, 251);
             Random rand = new Random();
@@ -350,17 +337,19 @@ namespace DBDMatchmakingTracker {
             if (checkBox.Checked) {
                 regionType.Enabled = false;
                 regions.SetRegionPreference(false);
-                intervalDisplay.Value = 10;
-                intervalDisplay.Minimum = 10;
-                intervalBar.Minimum = 10;
+                //TODO: Update Interval Display
 
                 return;
             }
 
             regionType.Enabled = true;
             regions.SetRegionPreference(true);
-            intervalDisplay.Minimum = 1;
-            intervalBar.Minimum = 1;
+
+            //TODO: Update Interval Display
+
+        }
+
+        private void label1_Click(object sender, EventArgs e) {
 
         }
     }
