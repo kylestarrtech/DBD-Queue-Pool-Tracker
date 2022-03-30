@@ -20,15 +20,21 @@ namespace DBDMatchmakingTracker {
 
         RegionList regions;
         bool recordingGlobal = false;
+        string prevIntervalText = "";
+
+        bool queueSurvivor = true;
 
         string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\DBDMatchmakingLogger\";
+
+        bool dragging = false;
+        Point dragOffset;
 
         public Form1() {
             InitializeComponent();
         }
         
         public bool ValidateRequiredSettings() {
-            return (bhvrSessionToken.TextLength > 0) && (killerQueue.Checked || survivorQueue.Checked) && (regionType.Text.Length > 0);
+            return (bhvrSessionToken.TextLength > 0) && (regionType.Text.Length > 0);
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -40,10 +46,16 @@ namespace DBDMatchmakingTracker {
                     "* Make sure a role is selected to queue as.";
                 return; 
             }
-            if (QueueDataTimer.Enabled) { QueueDataTimer.Stop(); return; }
+
+            Label button = (Label)sender;
+
+            if (QueueDataTimer.Enabled) { button.ForeColor = Color.FromArgb(0, 191, 0); button.Text = "Begin Recording Values"; QueueDataTimer.Stop(); return; }
 
             ResetDataTable();
 
+
+            button.ForeColor = Color.FromArgb(255, 64, 64);
+            button.Text = "Stop Recording Values";
             counter = 0;
             QueueDataTimer.Start();
             counter -= (int)Math.Round((double)(QueueDataTimer.Interval / 1000));
@@ -132,6 +144,7 @@ namespace DBDMatchmakingTracker {
 
             var response = await client.PostAsync(url, new StringContent(data, Encoding.UTF8, "application/json"));
             string strResponse = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(strResponse);
 
             try {
                 dynamic results = JsonConvert.DeserializeObject(strResponse);
@@ -156,12 +169,11 @@ namespace DBDMatchmakingTracker {
             if (allRegions.Checked) { regionString = "GLOBAL VALUES"; }
             if (recordingGlobal) { currentRegion = "GLOBAL"; }
 
-            string resultsText = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString() + " - " + regionString +
-                "\r\n----------------------------------------\r\n" +
+            string resultsText = "TIME: " + DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString() + "\n" +
+                "REGION: " + regionString + "\n\n" +
                 "KILLERS IN QUEUE: " + queueData.GetKlrPool() + "\r\n" +
                 "SURVIVORS IN QUEUE: " + queueData.GetSurvPool() + "\r\n" +
-                "CURRENT ESTIMATED WAIT TIME: " + (queueData.GetETA() / 1000).ToString("0.00") + " seconds" +
-                "\r\n----------------------------------------\r\n";
+                "CURRENT ESTIMATED WAIT TIME: " + (queueData.GetETA() / 1000).ToString("0.00") + " seconds";
 
             if (recordToTable) { dt.Rows.Add(counter, queueData.GetKlrPool(), queueData.GetSurvPool(), queueData.GetETA() / 1000); }
 
@@ -192,13 +204,14 @@ namespace DBDMatchmakingTracker {
 
             request["props"]["CrossplayOptOut"] = !crossplayEnabled.Checked;
 
-            if (survivorQueue.Checked) { request["side"] = "B"; }
+            if (queueSurvivor) { request["side"] = "B"; }
             else { request["side"] = "A"; }
 
             return request;
         }
 
         private void Form1_Load(object sender, EventArgs e) {
+            rawTable.Columns.Clear();
             dt = new DataTable();
             dt.Columns.Add("Time", typeof(int));
             dt.Columns.Add("KLRs", typeof(int));    
@@ -209,6 +222,7 @@ namespace DBDMatchmakingTracker {
 
             SetupRegions();
             SetupFiles();
+            CheckQueueAsStatus();
         }
 
         public void SetupFiles() {
@@ -272,7 +286,7 @@ namespace DBDMatchmakingTracker {
 
         public async void UpdateRequests() {
             counter += (int)Math.Round((double)(QueueDataTimer.Interval / 1000));
-            if (allRegions.Checked) {
+            if (allRegions.Checked) { 
                 int sumSurv = 0, sumKlr = 0;
                 List<double> regionEtas = new List<double>();
                 List<Region> regionList = regions.GetRegionList();
@@ -310,14 +324,22 @@ namespace DBDMatchmakingTracker {
                     recordingGlobal = false;
                 }
             } else {
-                QueueData queueData = await GetQueueData(regionType.SelectedIndex, true, true);
-                Console.WriteLine("Current Queue Data Shows: " + queueData.GetSurvPool() + " survivors are in queue!");
+                try {
+                    QueueData queueData = await GetQueueData(regionType.SelectedIndex, true, true);
+                    Console.WriteLine("Current Queue Data Shows: " + queueData.GetSurvPool() + " survivors are in queue!");
+                }
+                catch (Exception ex) {
+                    liveOutputBox.Text = "Exception at: " + DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString() + "\n" + ex.Source + "\n" + ex.Message + "\n" + ex.StackTrace;
+                    Console.WriteLine(liveOutputBox.Text);
+                }
             }
             UpdateChart();
             if (dt.Rows.Count > 100) {
                 dt.Rows.RemoveAt(0);
             }
             rawTable.DataSource = dt;
+            rawTable.FirstDisplayedScrollingRowIndex = rawTable.Rows.Count - 1;
+
         }
 
         private void regionType_SelectedIndexChanged(object sender, EventArgs e) {
@@ -355,6 +377,169 @@ namespace DBDMatchmakingTracker {
 
         private void label1_Click(object sender, EventArgs e) {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+            TextBox intervalBox = (TextBox)sender;
+            int interval;
+            bool isNumber = int.TryParse(intervalBox.Text, out interval);
+
+            if (isNumber == false || (isNumber && (interval * 1000) < 0)) {
+                intervalBox.Text = prevIntervalText;
+                return;
+            }
+
+            QueueDataTimer.Interval = interval * 1000;
+            prevIntervalText = intervalBox.Text;
+        }
+
+        private void LabelHoverStart(object sender, EventArgs e) {
+            Label label = (Label)sender;
+
+            short r = (short)(label.BackColor.R + 20);
+            short g = (short)(label.BackColor.G + 20);
+            short b = (short)(label.BackColor.B + 20);
+
+            if (r > 255) { r = 255; }
+            if (g > 255) { g = 255; }
+            if (b > 255) { b = 255; }
+
+            label.BackColor = Color.FromArgb(r, g, b);
+        }
+
+        private void LabelHoverEnd(object sender, EventArgs e) {
+            Label label = (Label)sender;
+
+            short r = (short)(label.BackColor.R - 20);
+            short g = (short)(label.BackColor.G - 20);
+            short b = (short)(label.BackColor.B - 20);
+
+            if (r < 0) { r = 0; }
+            if (g < 0) { g = 0; }
+            if (b < 0) { b = 0; }
+
+            label.BackColor = Color.FromArgb(r, g, b);
+
+        }
+
+        private void LabelClickStart(object sender, MouseEventArgs e) {
+            LabelHoverStart(sender, null);
+        }
+
+        private void LabelClickEnd(object sender, MouseEventArgs e) {
+            LabelHoverEnd(sender, null);
+        }
+
+        private void label8_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
+
+        private void label7_Click(object sender, EventArgs e) {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void TextboxFocusEnter(object sender, EventArgs e) {
+            TextBox textBox = (TextBox)sender;
+
+            short r = (short)(textBox.BackColor.R + 20);
+            short g = (short)(textBox.BackColor.G + 20);
+            short b = (short)(textBox.BackColor.B + 20);
+
+            if (r > 255) { r = 255; }
+            if (g > 255) { g = 255; }
+            if (b > 255) { b = 255; }
+
+            textBox.BackColor = Color.FromArgb(r, g, b);
+        }
+
+        private void TextboxFocusLeave(object sender, EventArgs e) {
+            TextBox textBox = (TextBox)sender;
+
+            short r = (short)(textBox.BackColor.R - 20);
+            short g = (short)(textBox.BackColor.G - 20);
+            short b = (short)(textBox.BackColor.B - 20);
+
+            if (r > 255) { r = 255; }
+            if (g > 255) { g = 255; }
+            if (b > 255) { b = 255; }
+
+            textBox.BackColor = Color.FromArgb(r, g, b);
+        }
+
+        private void TextboxHoverStart(object sender, EventArgs e) {
+            TextboxFocusEnter(sender, e);
+        }
+
+        private void TextboxHoverLeave(object sender, EventArgs e) {
+            TextboxFocusLeave(sender, e);
+        }
+
+        private void ComboBoxFocusEnter(object sender, EventArgs e) {
+            ComboBox comboBox = (ComboBox)sender;
+
+            short r = (short)(comboBox.BackColor.R + 20);
+            short g = (short)(comboBox.BackColor.G + 20);
+            short b = (short)(comboBox.BackColor.B + 20);
+
+            if (r > 255) { r = 255; }
+            if (g > 255) { g = 255; }
+            if (b > 255) { b = 255; }
+
+            comboBox.BackColor = Color.FromArgb(r, g, b);
+        }
+
+        private void ComboBoxFocusLeave(object sender, EventArgs e) {
+            ComboBox comboBox = (ComboBox)sender;
+
+            short r = (short)(comboBox.BackColor.R - 20);
+            short g = (short)(comboBox.BackColor.G - 20);
+            short b = (short)(comboBox.BackColor.B - 20);
+
+            if (r > 255) { r = 255; }
+            if (g > 255) { g = 255; }
+            if (b > 255) { b = 255; }
+
+            comboBox.BackColor = Color.FromArgb(r, g, b);
+        }
+
+        public void CheckQueueAsStatus() {
+            if (queueSurvivor) {
+                queueAsSurvivor.BackColor = Color.FromArgb(0, 0, 255);
+                queueAsSurvivor.ForeColor = Color.White;
+                queueAsKiller.BackColor = Color.FromArgb(159, 16, 16);
+                queueAsKiller.ForeColor = Color.FromArgb(159, 159, 159);
+                return;
+            }
+            queueAsSurvivor.BackColor = Color.FromArgb(16, 16, 159);
+            queueAsSurvivor.ForeColor = Color.FromArgb(159, 159, 159);
+            queueAsKiller.BackColor = Color.FromArgb(255, 0, 0);
+            queueAsKiller.ForeColor = Color.White;
+        }
+        private void queueAsSurvivor_Click(object sender, EventArgs e) {
+            queueSurvivor = true;
+            CheckQueueAsStatus();
+        }
+
+        private void queueAsKiller_Click(object sender, EventArgs e) {
+            queueSurvivor = false;
+            CheckQueueAsStatus();
+        }
+
+        private void DragStart(object sender, MouseEventArgs e) {
+            LabelClickStart(sender, e);
+            dragging = true;
+            dragOffset = new Point(Cursor.Position.X - this.Location.X, Cursor.Position.Y - this.Location.Y);
+        }
+
+        private void DragEnd(object sender, MouseEventArgs e) {
+            LabelClickEnd(sender, e);
+            dragging = false;
+        }
+
+        private void DragMove(object sender, MouseEventArgs e) {
+            if (dragging) {
+                this.Location = new Point(Cursor.Position.X - dragOffset.X, Cursor.Position.Y - dragOffset.Y);
+            }
         }
     }
 }
