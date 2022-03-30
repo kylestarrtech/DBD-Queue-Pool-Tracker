@@ -7,7 +7,7 @@
     <ProjectGuid>{DD6955B8-2A58-41BE-9A75-939A7449D332}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DBDMatchmakingTracker</RootNamespace>
-    <AssemblyName>DBDMatchmakingTracker</AssemblyName>
+    <AssemblyName>Dead by Daylight Queue Pool Tracker</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

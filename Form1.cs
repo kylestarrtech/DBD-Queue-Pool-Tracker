@@ -128,17 +128,8 @@ namespace DBDMatchmakingTracker {
 
             data = JsonConvert.SerializeObject(requestData);
 
-            //client.DefaultRequestHeaders.Add("User-Agent", "DeadByDaylight/++DeadByDaylight+Live-CL-546656 EGS/10.0.19044.1.256.64bit");
             client.DefaultRequestHeaders.Add("Cookie", "bhvrSession=" + bhvrSessionToken.Text);
-            //client.DefaultRequestHeaders.Add("x-kraken-analytics-session-id", "1d5fcdbb-4a3d-63ca-6fca-52a51d2e42fc");
-            //client.DefaultRequestHeaders.Add("x-kraken-client-os", "10.0.19044.1.256.64bit");
             client.DefaultRequestHeaders.Add("x-kraken-client-platform", platformChoice.Text);
-            //client.DefaultRequestHeaders.Add("x-kraken-client-provider", "egs");
-            //client.DefaultRequestHeaders.Add("x-kraken-client-resolution", "1920x1080");
-            //client.DefaultRequestHeaders.Add("x-kraken-client-timezone-offset", "240");
-            //client.DefaultRequestHeaders.Add("x-kraken-client-version", "5.6.2");
-            //client.DefaultRequestHeaders.Add("Accept", "*/*");
-            //client.DefaultRequestHeaders.Add("Accept-Encoding", "deflate, gzip");
 
 
             client.DefaultRequestHeaders.ConnectionClose = true;
