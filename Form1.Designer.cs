@@ -1,5 +1,5 @@
 ﻿namespace DBDMatchmakingTracker {
-    partial class Form1 {
+    partial class DBDQueueAnalyzer {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,19 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.QueueDataTimer = new System.Windows.Forms.Timer(this.components);
             this.KLRCHRT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.regionType = new System.Windows.Forms.ComboBox();
@@ -55,8 +55,8 @@
             this.dragBar = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.intervalBox = new System.Windows.Forms.TextBox();
+            this.recordData = new System.Windows.Forms.Label();
             this.SRVCHRT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ETACHRT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.blockPanel = new System.Windows.Forms.Panel();
@@ -64,6 +64,10 @@
             this.queueAsSurvivor = new System.Windows.Forms.Label();
             this.queueAsKiller = new System.Windows.Forms.Label();
             this.liveOutputBox = new System.Windows.Forms.Label();
+            this.viewGraphFolder = new System.Windows.Forms.Label();
+            this.clearGraphData = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.platformChoice = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.KLRCHRT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SRVCHRT)).BeginInit();
@@ -79,46 +83,46 @@
             // 
             this.KLRCHRT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.KLRCHRT.BorderlineWidth = 0;
-            chartArea7.AxisX.IsLabelAutoFit = false;
-            chartArea7.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea7.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea7.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            chartArea7.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            chartArea7.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea7.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea7.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea7.AxisY.IsLabelAutoFit = false;
-            chartArea7.AxisY.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea7.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea7.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            chartArea7.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            chartArea7.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea7.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea7.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            chartArea7.BorderColor = System.Drawing.Color.White;
-            chartArea7.Name = "ChartArea1";
-            this.KLRCHRT.ChartAreas.Add(chartArea7);
-            legend7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            legend7.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend7.ForeColor = System.Drawing.Color.White;
-            legend7.IsTextAutoFit = false;
-            legend7.Name = "Legend1";
-            this.KLRCHRT.Legends.Add(legend7);
+            chartArea10.AxisX.IsLabelAutoFit = false;
+            chartArea10.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea10.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea10.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            chartArea10.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            chartArea10.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea10.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea10.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea10.AxisY.IsLabelAutoFit = false;
+            chartArea10.AxisY.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea10.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea10.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            chartArea10.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            chartArea10.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea10.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea10.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            chartArea10.BorderColor = System.Drawing.Color.White;
+            chartArea10.Name = "ChartArea1";
+            this.KLRCHRT.ChartAreas.Add(chartArea10);
+            legend10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            legend10.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend10.ForeColor = System.Drawing.Color.White;
+            legend10.IsTextAutoFit = false;
+            legend10.Name = "Legend1";
+            this.KLRCHRT.Legends.Add(legend10);
             this.KLRCHRT.Location = new System.Drawing.Point(401, 22);
             this.KLRCHRT.Name = "KLRCHRT";
             this.KLRCHRT.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series7.BorderWidth = 3;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Color = System.Drawing.Color.Red;
-            series7.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series7.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            series7.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            series7.LabelForeColor = System.Drawing.Color.White;
-            series7.Legend = "Legend1";
-            series7.Name = "Killer Pool";
-            this.KLRCHRT.Series.Add(series7);
+            series10.BorderWidth = 3;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Color = System.Drawing.Color.Red;
+            series10.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series10.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            series10.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            series10.LabelForeColor = System.Drawing.Color.White;
+            series10.Legend = "Legend1";
+            series10.Name = "Killer Pool";
+            this.KLRCHRT.Series.Add(series10);
             this.KLRCHRT.Size = new System.Drawing.Size(779, 164);
             this.KLRCHRT.TabIndex = 2;
             this.KLRCHRT.Text = "chart1";
@@ -195,7 +199,7 @@
             this.crossplayEnabled.FlatAppearance.BorderSize = 15;
             this.crossplayEnabled.Font = new System.Drawing.Font("Roboto", 8F);
             this.crossplayEnabled.ForeColor = System.Drawing.Color.White;
-            this.crossplayEnabled.Location = new System.Drawing.Point(4, 211);
+            this.crossplayEnabled.Location = new System.Drawing.Point(5, 227);
             this.crossplayEnabled.Name = "crossplayEnabled";
             this.crossplayEnabled.Size = new System.Drawing.Size(118, 17);
             this.crossplayEnabled.TabIndex = 9;
@@ -211,15 +215,15 @@
             this.rawTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.rawTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rawTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.NullValue = "N/A";
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rawTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.NullValue = "N/A";
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rawTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.rawTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rawTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -227,37 +231,37 @@
             this.Column3,
             this.Column4});
             this.rawTable.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto Lt", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.rawTable.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Roboto Lt", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.rawTable.DefaultCellStyle = dataGridViewCellStyle15;
             this.rawTable.EnableHeadersVisualStyles = false;
             this.rawTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.rawTable.Location = new System.Drawing.Point(0, 311);
+            this.rawTable.Location = new System.Drawing.Point(0, 313);
             this.rawTable.MultiSelect = false;
             this.rawTable.Name = "rawTable";
             this.rawTable.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rawTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rawTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.rawTable.RowHeadersVisible = false;
             this.rawTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.rawTable.Size = new System.Drawing.Size(402, 151);
+            this.rawTable.Size = new System.Drawing.Size(402, 149);
             this.rawTable.TabIndex = 10;
             // 
             // Column1
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column1.HeaderText = "Column1";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -283,11 +287,11 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.label3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Roboto Cn", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1, 289);
+            this.label3.Location = new System.Drawing.Point(0, 298);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(400, 21);
+            this.label3.Size = new System.Drawing.Size(400, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Raw Data Table:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -310,7 +314,7 @@
             this.allRegions.FlatAppearance.BorderSize = 15;
             this.allRegions.Font = new System.Drawing.Font("Roboto", 8F);
             this.allRegions.ForeColor = System.Drawing.Color.White;
-            this.allRegions.Location = new System.Drawing.Point(5, 191);
+            this.allRegions.Location = new System.Drawing.Point(5, 209);
             this.allRegions.Name = "allRegions";
             this.allRegions.Size = new System.Drawing.Size(109, 17);
             this.allRegions.TabIndex = 18;
@@ -325,7 +329,7 @@
             this.dragBar.ForeColor = System.Drawing.Color.White;
             this.dragBar.Location = new System.Drawing.Point(1, 1);
             this.dragBar.Name = "dragBar";
-            this.dragBar.Size = new System.Drawing.Size(1122, 20);
+            this.dragBar.Size = new System.Drawing.Size(926, 20);
             this.dragBar.TabIndex = 19;
             this.dragBar.Text = "Dead by Daylight Queue Pool Analyzer - Version 1.0 - Made by SHADERS";
             this.dragBar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -369,84 +373,84 @@
             this.label8.MouseLeave += new System.EventHandler(this.LabelHoverEnd);
             this.label8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelClickEnd);
             // 
-            // textBox1
+            // intervalBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(199, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 17);
-            this.textBox1.TabIndex = 24;
-            this.textBox1.Text = "1";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Enter += new System.EventHandler(this.TextboxFocusEnter);
-            this.textBox1.Leave += new System.EventHandler(this.TextboxFocusLeave);
-            this.textBox1.MouseEnter += new System.EventHandler(this.TextboxHoverStart);
-            this.textBox1.MouseLeave += new System.EventHandler(this.TextboxHoverLeave);
+            this.intervalBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.intervalBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.intervalBox.Font = new System.Drawing.Font("Roboto", 10F);
+            this.intervalBox.ForeColor = System.Drawing.Color.White;
+            this.intervalBox.Location = new System.Drawing.Point(199, 138);
+            this.intervalBox.Name = "intervalBox";
+            this.intervalBox.Size = new System.Drawing.Size(201, 17);
+            this.intervalBox.TabIndex = 24;
+            this.intervalBox.Text = "1";
+            this.intervalBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.intervalBox.Enter += new System.EventHandler(this.TextboxFocusEnter);
+            this.intervalBox.Leave += new System.EventHandler(this.TextboxFocusLeave);
+            this.intervalBox.MouseEnter += new System.EventHandler(this.TextboxHoverStart);
+            this.intervalBox.MouseLeave += new System.EventHandler(this.TextboxHoverLeave);
             // 
-            // label9
+            // recordData
             // 
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label9.Font = new System.Drawing.Font("Roboto Bk", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(1, 460);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(399, 56);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Begin Recording Values";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Click += new System.EventHandler(this.button1_Click);
-            this.label9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelClickStart);
-            this.label9.MouseEnter += new System.EventHandler(this.LabelHoverStart);
-            this.label9.MouseLeave += new System.EventHandler(this.LabelHoverEnd);
-            this.label9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelClickEnd);
+            this.recordData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.recordData.Font = new System.Drawing.Font("Roboto Bk", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(0)))));
+            this.recordData.Location = new System.Drawing.Point(1, 462);
+            this.recordData.Name = "recordData";
+            this.recordData.Size = new System.Drawing.Size(399, 54);
+            this.recordData.TabIndex = 25;
+            this.recordData.Text = "Begin Recording Values";
+            this.recordData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.recordData.Click += new System.EventHandler(this.button1_Click);
+            this.recordData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelClickStart);
+            this.recordData.MouseEnter += new System.EventHandler(this.LabelHoverStart);
+            this.recordData.MouseLeave += new System.EventHandler(this.LabelHoverEnd);
+            this.recordData.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelClickEnd);
             // 
             // SRVCHRT
             // 
             this.SRVCHRT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.SRVCHRT.BorderlineWidth = 0;
-            chartArea8.AxisX.IsLabelAutoFit = false;
-            chartArea8.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea8.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea8.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            chartArea8.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            chartArea8.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea8.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea8.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea8.AxisY.IsLabelAutoFit = false;
-            chartArea8.AxisY.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea8.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea8.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            chartArea8.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            chartArea8.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea8.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea8.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            chartArea8.BorderColor = System.Drawing.Color.White;
-            chartArea8.Name = "ChartArea1";
-            this.SRVCHRT.ChartAreas.Add(chartArea8);
-            legend8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            legend8.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend8.ForeColor = System.Drawing.Color.White;
-            legend8.IsTextAutoFit = false;
-            legend8.Name = "Legend1";
-            this.SRVCHRT.Legends.Add(legend8);
+            chartArea11.AxisX.IsLabelAutoFit = false;
+            chartArea11.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea11.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea11.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            chartArea11.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            chartArea11.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea11.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea11.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea11.AxisY.IsLabelAutoFit = false;
+            chartArea11.AxisY.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea11.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea11.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            chartArea11.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            chartArea11.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea11.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea11.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            chartArea11.BorderColor = System.Drawing.Color.White;
+            chartArea11.Name = "ChartArea1";
+            this.SRVCHRT.ChartAreas.Add(chartArea11);
+            legend11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            legend11.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend11.ForeColor = System.Drawing.Color.White;
+            legend11.IsTextAutoFit = false;
+            legend11.Name = "Legend1";
+            this.SRVCHRT.Legends.Add(legend11);
             this.SRVCHRT.Location = new System.Drawing.Point(401, 187);
             this.SRVCHRT.Name = "SRVCHRT";
             this.SRVCHRT.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series8.BorderWidth = 3;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Color = System.Drawing.Color.Blue;
-            series8.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series8.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            series8.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            series8.LabelForeColor = System.Drawing.Color.White;
-            series8.Legend = "Legend1";
-            series8.Name = "Survivor Pool";
-            this.SRVCHRT.Series.Add(series8);
+            series11.BorderWidth = 3;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.Color = System.Drawing.Color.Blue;
+            series11.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series11.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            series11.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            series11.LabelForeColor = System.Drawing.Color.White;
+            series11.Legend = "Legend1";
+            series11.Name = "Survivor Pool";
+            this.SRVCHRT.Series.Add(series11);
             this.SRVCHRT.Size = new System.Drawing.Size(779, 164);
             this.SRVCHRT.TabIndex = 26;
             this.SRVCHRT.Text = "chart1";
@@ -455,46 +459,46 @@
             // 
             this.ETACHRT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ETACHRT.BorderlineWidth = 0;
-            chartArea9.AxisX.IsLabelAutoFit = false;
-            chartArea9.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea9.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea9.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            chartArea9.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            chartArea9.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea9.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea9.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea9.AxisY.IsLabelAutoFit = false;
-            chartArea9.AxisY.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea9.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea9.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            chartArea9.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            chartArea9.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea9.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea9.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            chartArea9.BorderColor = System.Drawing.Color.White;
-            chartArea9.Name = "ChartArea1";
-            this.ETACHRT.ChartAreas.Add(chartArea9);
-            legend9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            legend9.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend9.ForeColor = System.Drawing.Color.White;
-            legend9.IsTextAutoFit = false;
-            legend9.Name = "Legend1";
-            this.ETACHRT.Legends.Add(legend9);
+            chartArea12.AxisX.IsLabelAutoFit = false;
+            chartArea12.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea12.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea12.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            chartArea12.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            chartArea12.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea12.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea12.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea12.AxisY.IsLabelAutoFit = false;
+            chartArea12.AxisY.LabelStyle.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea12.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea12.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            chartArea12.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            chartArea12.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea12.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea12.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            chartArea12.BorderColor = System.Drawing.Color.White;
+            chartArea12.Name = "ChartArea1";
+            this.ETACHRT.ChartAreas.Add(chartArea12);
+            legend12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            legend12.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend12.ForeColor = System.Drawing.Color.White;
+            legend12.IsTextAutoFit = false;
+            legend12.Name = "Legend1";
+            this.ETACHRT.Legends.Add(legend12);
             this.ETACHRT.Location = new System.Drawing.Point(401, 352);
             this.ETACHRT.Name = "ETACHRT";
             this.ETACHRT.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series9.BorderWidth = 3;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(0)))));
-            series9.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series9.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            series9.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            series9.LabelForeColor = System.Drawing.Color.White;
-            series9.Legend = "Legend1";
-            series9.Name = "Estimated Wait Times";
-            this.ETACHRT.Series.Add(series9);
+            series12.BorderWidth = 3;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(0)))));
+            series12.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series12.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            series12.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            series12.LabelForeColor = System.Drawing.Color.White;
+            series12.Legend = "Legend1";
+            series12.Name = "Estimated Wait Times";
+            this.ETACHRT.Series.Add(series12);
             this.ETACHRT.Size = new System.Drawing.Size(779, 164);
             this.ETACHRT.TabIndex = 27;
             this.ETACHRT.Text = "chart2";
@@ -512,11 +516,11 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.label4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Roboto Cn", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1, 231);
+            this.label4.Location = new System.Drawing.Point(1, 247);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(399, 21);
+            this.label4.Size = new System.Drawing.Size(399, 13);
             this.label4.TabIndex = 29;
             this.label4.Text = "Queue As:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -526,7 +530,7 @@
             this.queueAsSurvivor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(159)))));
             this.queueAsSurvivor.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Bold);
             this.queueAsSurvivor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            this.queueAsSurvivor.Location = new System.Drawing.Point(1, 253);
+            this.queueAsSurvivor.Location = new System.Drawing.Point(1, 261);
             this.queueAsSurvivor.Name = "queueAsSurvivor";
             this.queueAsSurvivor.Size = new System.Drawing.Size(199, 35);
             this.queueAsSurvivor.TabIndex = 30;
@@ -543,7 +547,7 @@
             this.queueAsKiller.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.queueAsKiller.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Bold);
             this.queueAsKiller.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            this.queueAsKiller.Location = new System.Drawing.Point(201, 253);
+            this.queueAsKiller.Location = new System.Drawing.Point(201, 261);
             this.queueAsKiller.Name = "queueAsKiller";
             this.queueAsKiller.Size = new System.Drawing.Size(199, 35);
             this.queueAsKiller.TabIndex = 31;
@@ -568,12 +572,75 @@
     "VORS IN QUEUE: 36\r\nCURRENT ESTIMATED WAIT TIME: 72.20 seconds";
             this.liveOutputBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // viewGraphFolder
+            // 
+            this.viewGraphFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.viewGraphFolder.Font = new System.Drawing.Font("Roboto Bk", 7F);
+            this.viewGraphFolder.ForeColor = System.Drawing.Color.White;
+            this.viewGraphFolder.Location = new System.Drawing.Point(1040, 1);
+            this.viewGraphFolder.Name = "viewGraphFolder";
+            this.viewGraphFolder.Size = new System.Drawing.Size(83, 20);
+            this.viewGraphFolder.TabIndex = 33;
+            this.viewGraphFolder.Text = "View Data Folder";
+            this.viewGraphFolder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.viewGraphFolder.Click += new System.EventHandler(this.viewGraphFolder_Click);
+            this.viewGraphFolder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelClickStart);
+            this.viewGraphFolder.MouseEnter += new System.EventHandler(this.LabelHoverStart);
+            this.viewGraphFolder.MouseLeave += new System.EventHandler(this.LabelHoverEnd);
+            this.viewGraphFolder.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelClickEnd);
+            // 
+            // clearGraphData
+            // 
+            this.clearGraphData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.clearGraphData.Font = new System.Drawing.Font("Roboto Bk", 7F);
+            this.clearGraphData.ForeColor = System.Drawing.Color.White;
+            this.clearGraphData.Location = new System.Drawing.Point(928, 1);
+            this.clearGraphData.Name = "clearGraphData";
+            this.clearGraphData.Size = new System.Drawing.Size(112, 20);
+            this.clearGraphData.TabIndex = 34;
+            this.clearGraphData.Text = "Clear Data (Right Click)";
+            this.clearGraphData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clearGraphData.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clearGraphData_MouseClick);
+            this.clearGraphData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelClickStart);
+            this.clearGraphData.MouseEnter += new System.EventHandler(this.LabelHoverStart);
+            this.clearGraphData.MouseLeave += new System.EventHandler(this.LabelHoverEnd);
+            this.clearGraphData.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelClickEnd);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Roboto", 8F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(1, 189);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 17);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Platform Used:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // platformChoice
+            // 
+            this.platformChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.platformChoice.Font = new System.Drawing.Font("Roboto", 9F);
+            this.platformChoice.ForeColor = System.Drawing.Color.White;
+            this.platformChoice.FormattingEnabled = true;
+            this.platformChoice.Items.AddRange(new object[] {
+            "egs",
+            "steam"});
+            this.platformChoice.Location = new System.Drawing.Point(86, 187);
+            this.platformChoice.Name = "platformChoice";
+            this.platformChoice.Size = new System.Drawing.Size(314, 22);
+            this.platformChoice.TabIndex = 35;
+            // 
+            // DBDQueueAnalyzer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1182, 517);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.platformChoice);
+            this.Controls.Add(this.clearGraphData);
+            this.Controls.Add(this.viewGraphFolder);
             this.Controls.Add(this.liveOutputBox);
             this.Controls.Add(this.queueAsKiller);
             this.Controls.Add(this.queueAsSurvivor);
@@ -581,8 +648,8 @@
             this.Controls.Add(this.blockPanel);
             this.Controls.Add(this.ETACHRT);
             this.Controls.Add(this.SRVCHRT);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.recordData);
+            this.Controls.Add(this.intervalBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dragBar);
@@ -597,8 +664,8 @@
             this.Controls.Add(this.regionType);
             this.Controls.Add(this.KLRCHRT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Dead by Daylight Matchmaking Analyzer";
+            this.Name = "DBDQueueAnalyzer";
+            this.Text = "Dead by Daylight Queue Pool Analyzer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.KLRCHRT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawTable)).EndInit();
@@ -624,8 +691,8 @@
         private System.Windows.Forms.Label dragBar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox intervalBox;
+        private System.Windows.Forms.Label recordData;
         private System.Windows.Forms.DataVisualization.Charting.Chart SRVCHRT;
         private System.Windows.Forms.DataVisualization.Charting.Chart ETACHRT;
         private System.Windows.Forms.Panel blockPanel;
@@ -637,6 +704,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label liveOutputBox;
+        private System.Windows.Forms.Label viewGraphFolder;
+        private System.Windows.Forms.Label clearGraphData;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox platformChoice;
     }
 }
 

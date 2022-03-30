@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace DBDMatchmakingTracker {
-    public partial class Form1 : Form {
+    public partial class DBDQueueAnalyzer : Form {
 
         DataTable dt;
         int counter;
@@ -29,7 +30,7 @@ namespace DBDMatchmakingTracker {
         bool dragging = false;
         Point dragOffset;
 
-        public Form1() {
+        public DBDQueueAnalyzer() {
             InitializeComponent();
         }
         
@@ -131,7 +132,7 @@ namespace DBDMatchmakingTracker {
             client.DefaultRequestHeaders.Add("Cookie", "bhvrSession=" + bhvrSessionToken.Text);
             //client.DefaultRequestHeaders.Add("x-kraken-analytics-session-id", "1d5fcdbb-4a3d-63ca-6fca-52a51d2e42fc");
             //client.DefaultRequestHeaders.Add("x-kraken-client-os", "10.0.19044.1.256.64bit");
-            client.DefaultRequestHeaders.Add("x-kraken-client-platform", "egs");
+            client.DefaultRequestHeaders.Add("x-kraken-client-platform", platformChoice.Text);
             //client.DefaultRequestHeaders.Add("x-kraken-client-provider", "egs");
             //client.DefaultRequestHeaders.Add("x-kraken-client-resolution", "1920x1080");
             //client.DefaultRequestHeaders.Add("x-kraken-client-timezone-offset", "240");
@@ -211,6 +212,8 @@ namespace DBDMatchmakingTracker {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
+            dragBar.Text = "Dead by Daylight Queue Pool Analyzer - Version " + Application.ProductVersion + " - Made by @SHADERSOP";
+
             rawTable.Columns.Clear();
             dt = new DataTable();
             dt.Columns.Add("Time", typeof(int));
@@ -219,6 +222,9 @@ namespace DBDMatchmakingTracker {
             dt.Columns.Add("ETAs", typeof(double));
 
             regionType.Region = new System.Drawing.Region(new Rectangle(3, 3, regionType.Width - 3, regionType.Height - 7));
+            platformChoice.Region = new System.Drawing.Region(new Rectangle(3, 3, regionType.Width - 3, regionType.Height - 7));
+
+            platformChoice.SelectedIndex = 0;
 
             SetupRegions();
             SetupFiles();
@@ -338,7 +344,7 @@ namespace DBDMatchmakingTracker {
                 dt.Rows.RemoveAt(0);
             }
             rawTable.DataSource = dt;
-            rawTable.FirstDisplayedScrollingRowIndex = rawTable.Rows.Count - 1;
+            //rawTable.FirstDisplayedScrollingRowIndex = rawTable.Rows.Count - 1;
 
         }
 
@@ -361,7 +367,10 @@ namespace DBDMatchmakingTracker {
                 regions.SetRegionPreference(false);
                 blockPanel.Enabled = true;
                 blockPanel.Visible = true;
-                //TODO: Update Interval Display
+                
+                if (int.Parse(intervalBox.Text) < 15) {
+                    intervalBox.Text = "15";
+                }
 
                 return;
             }
@@ -370,8 +379,6 @@ namespace DBDMatchmakingTracker {
             blockPanel.Visible = false;
             regionType.Enabled = true;
             regions.SetRegionPreference(true);
-
-            //TODO: Update Interval Display
 
         }
 
@@ -540,6 +547,20 @@ namespace DBDMatchmakingTracker {
             if (dragging) {
                 this.Location = new Point(Cursor.Position.X - dragOffset.X, Cursor.Position.Y - dragOffset.Y);
             }
+        }
+
+        private void clearGraphData_MouseClick(object sender, MouseEventArgs e) {
+            if (e.Button == MouseButtons.Right) {
+                string[] directories = Directory.GetDirectories(path);
+                foreach (string directory in directories) {
+                    Directory.Delete(directory, true);
+                }
+                Application.Restart();
+            }
+        }
+
+        private void viewGraphFolder_Click(object sender, EventArgs e) {
+            Process.Start(path);
         }
     }
 }
