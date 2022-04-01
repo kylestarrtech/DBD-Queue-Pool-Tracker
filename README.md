@@ -1,4 +1,4 @@
-# Dead by Daylight Matchmaking Tracker
+# Dead by Daylight Queue Pool Tracker
 
 ## Summary
 The **Dead by Daylight Queue Pool Tracker** is a tool used to track the general queue pools for both survivor and killer, alongside estimated times to find a match in any region - either individual or all at once!
