@@ -68,6 +68,7 @@
             this.clearGraphData = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.platformChoice = new System.Windows.Forms.ComboBox();
+            this.kofi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.KLRCHRT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SRVCHRT)).BeginInit();
@@ -130,6 +131,7 @@
             // regionType
             // 
             this.regionType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.regionType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.regionType.Font = new System.Drawing.Font("Roboto", 9F);
             this.regionType.ForeColor = System.Drawing.Color.White;
             this.regionType.FormattingEnabled = true;
@@ -195,6 +197,7 @@
             this.crossplayEnabled.AutoSize = true;
             this.crossplayEnabled.Checked = true;
             this.crossplayEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.crossplayEnabled.Cursor = System.Windows.Forms.Cursors.Hand;
             this.crossplayEnabled.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.crossplayEnabled.FlatAppearance.BorderSize = 15;
             this.crossplayEnabled.Font = new System.Drawing.Font("Roboto", 8F);
@@ -310,6 +313,7 @@
             // allRegions
             // 
             this.allRegions.AutoSize = true;
+            this.allRegions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.allRegions.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.allRegions.FlatAppearance.BorderSize = 15;
             this.allRegions.Font = new System.Drawing.Font("Roboto", 8F);
@@ -325,11 +329,12 @@
             // dragBar
             // 
             this.dragBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.dragBar.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.dragBar.Font = new System.Drawing.Font("Roboto Bk", 11F);
             this.dragBar.ForeColor = System.Drawing.Color.White;
             this.dragBar.Location = new System.Drawing.Point(1, 1);
             this.dragBar.Name = "dragBar";
-            this.dragBar.Size = new System.Drawing.Size(926, 20);
+            this.dragBar.Size = new System.Drawing.Size(887, 20);
             this.dragBar.TabIndex = 19;
             this.dragBar.Text = "Dead by Daylight Queue Pool Analyzer - Version 1.0 - Made by SHADERS";
             this.dragBar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,6 +347,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Roboto Bk", 7F);
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(1124, 1);
@@ -359,6 +365,7 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Roboto Bk", 7F);
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(1153, 1);
@@ -393,6 +400,7 @@
             // recordData
             // 
             this.recordData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.recordData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.recordData.Font = new System.Drawing.Font("Roboto Bk", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(0)))));
             this.recordData.Location = new System.Drawing.Point(1, 462);
@@ -506,6 +514,7 @@
             // blockPanel
             // 
             this.blockPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.blockPanel.Cursor = System.Windows.Forms.Cursors.No;
             this.blockPanel.Enabled = false;
             this.blockPanel.Location = new System.Drawing.Point(56, 174);
             this.blockPanel.Name = "blockPanel";
@@ -528,6 +537,7 @@
             // queueAsSurvivor
             // 
             this.queueAsSurvivor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(159)))));
+            this.queueAsSurvivor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.queueAsSurvivor.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Bold);
             this.queueAsSurvivor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.queueAsSurvivor.Location = new System.Drawing.Point(1, 261);
@@ -545,6 +555,7 @@
             // queueAsKiller
             // 
             this.queueAsKiller.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.queueAsKiller.Cursor = System.Windows.Forms.Cursors.Hand;
             this.queueAsKiller.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Bold);
             this.queueAsKiller.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.queueAsKiller.Location = new System.Drawing.Point(201, 261);
@@ -568,13 +579,15 @@
             this.liveOutputBox.Name = "liveOutputBox";
             this.liveOutputBox.Size = new System.Drawing.Size(399, 115);
             this.liveOutputBox.TabIndex = 32;
-            this.liveOutputBox.Text = "TIME: 2022-03-29 - 10:11:35 PM\r\nREGION: AP-SOUTH-1\r\n\r\nKILLERS IN QUEUE: 15\r\nSURVI" +
-    "VORS IN QUEUE: 36\r\nCURRENT ESTIMATED WAIT TIME: 72.20 seconds";
+            this.liveOutputBox.Text = "WELCOME TO THE DEAD BY DAYLIGHT QUEUE POOL ANALYZER\r\nSELECT YOUR REGION & PLATFOR" +
+    "M\r\nGET YOUR BHVR SESSION ID\r\nSELECT CROSSPLAY ON OR OFF\r\nSELECT WHO TO QUEUE AS\r" +
+    "\nFINALLY HIT BEGIN RECORDING";
             this.liveOutputBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // viewGraphFolder
             // 
             this.viewGraphFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.viewGraphFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.viewGraphFolder.Font = new System.Drawing.Font("Roboto Bk", 7F);
             this.viewGraphFolder.ForeColor = System.Drawing.Color.White;
             this.viewGraphFolder.Location = new System.Drawing.Point(1040, 1);
@@ -592,6 +605,7 @@
             // clearGraphData
             // 
             this.clearGraphData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.clearGraphData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearGraphData.Font = new System.Drawing.Font("Roboto Bk", 7F);
             this.clearGraphData.ForeColor = System.Drawing.Color.White;
             this.clearGraphData.Location = new System.Drawing.Point(928, 1);
@@ -620,6 +634,7 @@
             // platformChoice
             // 
             this.platformChoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.platformChoice.Cursor = System.Windows.Forms.Cursors.Hand;
             this.platformChoice.Font = new System.Drawing.Font("Roboto", 9F);
             this.platformChoice.ForeColor = System.Drawing.Color.White;
             this.platformChoice.FormattingEnabled = true;
@@ -630,6 +645,25 @@
             this.platformChoice.Name = "platformChoice";
             this.platformChoice.Size = new System.Drawing.Size(314, 22);
             this.platformChoice.TabIndex = 35;
+            this.platformChoice.SelectedIndexChanged += new System.EventHandler(this.platformChoice_SelectedIndexChanged);
+            // 
+            // kofi
+            // 
+            this.kofi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.kofi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kofi.Font = new System.Drawing.Font("Roboto Bk", 7F);
+            this.kofi.ForeColor = System.Drawing.Color.White;
+            this.kofi.Location = new System.Drawing.Point(889, 1);
+            this.kofi.Name = "kofi";
+            this.kofi.Size = new System.Drawing.Size(38, 20);
+            this.kofi.TabIndex = 37;
+            this.kofi.Text = "Ko-Fi";
+            this.kofi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.kofi.Click += new System.EventHandler(this.kofi_Click);
+            this.kofi.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LabelClickStart);
+            this.kofi.MouseEnter += new System.EventHandler(this.LabelHoverStart);
+            this.kofi.MouseLeave += new System.EventHandler(this.LabelHoverEnd);
+            this.kofi.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LabelClickEnd);
             // 
             // DBDQueueAnalyzer
             // 
@@ -637,6 +671,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1182, 517);
+            this.Controls.Add(this.kofi);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.platformChoice);
             this.Controls.Add(this.clearGraphData);
@@ -708,6 +743,7 @@
         private System.Windows.Forms.Label clearGraphData;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox platformChoice;
+        private System.Windows.Forms.Label kofi;
     }
 }
 

@@ -26,6 +26,10 @@ namespace DBDMatchmakingTracker {
         bool queueSurvivor = true;
 
         string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\DBDMatchmakingLogger\";
+        string regionPath;
+        string configPath;
+
+        ConfigHandler config;
 
         bool dragging = false;
         Point dragOffset;
@@ -170,13 +174,13 @@ namespace DBDMatchmakingTracker {
             if (recordToTable) { dt.Rows.Add(counter, queueData.GetKlrPool(), queueData.GetSurvPool(), queueData.GetETA() / 1000); }
 
 
-            using (StreamWriter sw = new StreamWriter(path + currentRegion + @"\KillerPool.csv", true)) {
+            using (StreamWriter sw = new StreamWriter(regionPath + currentRegion + @"\KillerPool.csv", true)) {
                 sw.WriteLine(DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString() + "," + queueData.GetKlrPool());
             }
-            using (StreamWriter sw = new StreamWriter(path + currentRegion + @"\SurvivorPool.csv", true)) {
+            using (StreamWriter sw = new StreamWriter(regionPath + currentRegion + @"\SurvivorPool.csv", true)) {
                 sw.WriteLine(DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString() + "," + queueData.GetSurvPool());
             }
-            using (StreamWriter sw = new StreamWriter(path + currentRegion + @"\EstimatedWaitTimes.csv", true)) {
+            using (StreamWriter sw = new StreamWriter(regionPath + currentRegion + @"\EstimatedWaitTimes.csv", true)) {
                 sw.WriteLine(DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString() + "," + (queueData.GetETA()).ToString("0.00"));
             }
 
@@ -204,6 +208,9 @@ namespace DBDMatchmakingTracker {
 
         private void Form1_Load(object sender, EventArgs e) {
             dragBar.Text = "Dead by Daylight Queue Pool Analyzer - Version " + Application.ProductVersion + " - Made by @SHADERSOP";
+            regionPath = path + @"REGIONS\";
+            configPath = path + @"config.json";
+
 
             rawTable.Columns.Clear();
             dt = new DataTable();
@@ -215,17 +222,16 @@ namespace DBDMatchmakingTracker {
             regionType.Region = new System.Drawing.Region(new Rectangle(3, 3, regionType.Width - 3, regionType.Height - 7));
             platformChoice.Region = new System.Drawing.Region(new Rectangle(3, 3, regionType.Width - 3, regionType.Height - 7));
 
-            platformChoice.SelectedIndex = 0;
-
             SetupRegions();
             SetupFiles();
+            SetupConfig();
             CheckQueueAsStatus();
         }
 
         public void SetupFiles() {
             List<Region> regionList = regions.GetRegionList();
             foreach(Region region in regionList) {
-                string directoryPath = path + region.GetRegionName().ToUpper();
+                string directoryPath = regionPath + region.GetRegionName().ToUpper();
                 if (!Directory.Exists(directoryPath)) {
                     Directory.CreateDirectory(directoryPath);
                 }
@@ -233,10 +239,10 @@ namespace DBDMatchmakingTracker {
                 ValidateFiles(directoryPath);
             }
 
-            if (!Directory.Exists(path + "GLOBAL")) {
-                Directory.CreateDirectory(path + "GLOBAL");
+            if (!Directory.Exists(regionPath + "GLOBAL")) {
+                Directory.CreateDirectory(regionPath + "GLOBAL");
             }
-            ValidateFiles(path + "GLOBAL");
+            ValidateFiles(regionPath + "GLOBAL");
         }
 
         public void ValidateFiles(string directoryPath) {
@@ -257,6 +263,37 @@ namespace DBDMatchmakingTracker {
                     sw.WriteLine("Time,ETAs");
                 }
             }
+        }
+
+        public void SetupConfig() {
+            if (!File.Exists(configPath)) {
+                CreateNewConfig();
+            }
+
+            try {
+                config = JsonConvert.DeserializeObject<ConfigHandler>(File.ReadAllText(configPath));
+
+                regionType.SelectedIndex = config.RegionPreference;
+                platformChoice.SelectedIndex = config.PlatformPreference;
+                allRegions.Checked = config.SniffAllRegions;
+
+                queueSurvivor = config.QueueAsSurvivor;
+                CheckQueueAsStatus();
+
+            } catch (Exception ex) {
+                CreateNewConfig();
+                Console.WriteLine("Exception: " + ex.Message + "\n" + ex.StackTrace + "\n" + ex.Source);
+            }
+        }
+
+        public void CreateNewConfig() {
+            config = new ConfigHandler(true, 0, 0, false, true, Application.ProductVersion);
+            string jsonConfig = JsonConvert.SerializeObject(config);
+            File.WriteAllText(configPath, jsonConfig);
+        }
+
+        public void SaveConfig() {
+            File.WriteAllText(configPath, JsonConvert.SerializeObject(config));
         }
 
         public void SetupRegions() {
@@ -349,9 +386,19 @@ namespace DBDMatchmakingTracker {
             }
             regions.SetRegionLatency(regionType.SelectedIndex, 50);
             Console.WriteLine("Selected Region is " + regions.GetRegion(regions.GetSelectedRegion()).GetRegionName());
+
+            try {
+                config.RegionPreference = regionType.SelectedIndex;
+                SaveConfig();
+            } catch (Exception) {
+                Console.WriteLine("Config is null");
+            }
         }
 
         private void allRegions_CheckedChanged(object sender, EventArgs e) {
+            config.SniffAllRegions = allRegions.Checked;
+            SaveConfig();
+
             CheckBox checkBox = (CheckBox)sender;
             if (checkBox.Checked) {
                 regionType.Enabled = false;
@@ -501,6 +548,10 @@ namespace DBDMatchmakingTracker {
         }
 
         public void CheckQueueAsStatus() {
+
+            config.QueueAsSurvivor = queueSurvivor;
+            SaveConfig();
+
             if (queueSurvivor) {
                 queueAsSurvivor.BackColor = Color.FromArgb(0, 0, 255);
                 queueAsSurvivor.ForeColor = Color.White;
@@ -552,6 +603,15 @@ namespace DBDMatchmakingTracker {
 
         private void viewGraphFolder_Click(object sender, EventArgs e) {
             Process.Start(path);
+        }
+
+        private void kofi_Click(object sender, EventArgs e) {
+            Process.Start("https://ko-fi.com/shadersop");
+        }
+
+        private void platformChoice_SelectedIndexChanged(object sender, EventArgs e) {
+            config.PlatformPreference = platformChoice.SelectedIndex;
+            SaveConfig();
         }
     }
 }
